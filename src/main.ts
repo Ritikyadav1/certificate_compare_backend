@@ -13,7 +13,8 @@ async function bootstrap() {
     origin: [
       'http://localhost:5173', // Local Frontend
       'http://localhost:4173', // Vite Preview
-      // 'https://your-frontend-app.onrender.com', // TODO: Add your production Frontend URL here
+      'https://certificates-compare-frontend-n7j4gaee8.vercel.app', // Deployed Frontend
+      'https://certificates-compare-frontend.vercel.app', // Production Alias
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
