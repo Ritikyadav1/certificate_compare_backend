@@ -15,7 +15,9 @@ export class AppController {
   @UseInterceptors(FileFieldsInterceptor([
     { name: 'certificate1', maxCount: 1 },
     { name: 'certificate2', maxCount: 1 },
-  ]))
+  ], {
+    limits: { fileSize: 1024 * 1024 }, // 1MB Limit
+  }))
   compareCertificates(@UploadedFiles() files: { certificate1?: Express.Multer.File[], certificate2?: Express.Multer.File[] }) {
     const file1 = files.certificate1?.[0];
     const file2 = files.certificate2?.[0];
